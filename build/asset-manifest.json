@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c73ca295.css",
+    "main.js": "/static/js/main.52ac3656.js",
+    "static/media/Main.mp4": "/static/media/Main.db6ff30e0136fc8b5fb8.mp4",
+    "static/media/Susy maam.jpg": "/static/media/Susy maam.6f839568a61eb01002b9.jpg",
+    "static/media/gga8.png": "/static/media/gga8.993c6136ca26681b6c8a.png",
+    "static/media/su.jpg": "/static/media/su.6be2c38954febff8bb31.jpg",
+    "static/media/puru.jpg": "/static/media/puru.a2cca5e2d98cecb8131a.jpg",
+    "static/media/pps.png": "/static/media/pps.a1a4c7d580f50569e9d5.png",
+    "static/media/Raj Joshi.jpg": "/static/media/Raj Joshi.7255215ab3b102adca7e.jpg",
+    "static/media/Sunil Mehta.jpg": "/static/media/Sunil Mehta.4652a03ca16834d5d342.jpg",
+    "static/media/Mitesh Desai.jpg": "/static/media/Mitesh Desai.adc0a1f0e4039b75ec7f.jpg",
+    "static/media/fourth.png": "/static/media/fourth.4dac3456a56e1050deaa.png",
+    "static/media/Mega1.png": "/static/media/Mega1.5a99278f9b0dbb1acc5c.png",
+    "static/media/DSC09952.jpg": "/static/media/DSC09952.25031b10e2d535757231.jpg",
+    "static/media/autop.png": "/static/media/autop.4b690b87d0dee6e477a5.png",
+    "static/media/photo2.jpg": "/static/media/photo2.60564950cb714748717a.jpg",
+    "static/media/Feature4.jpeg": "/static/media/Feature4.44f7ab7b8128381c0a63.jpeg",
+    "static/media/Feature3.jpeg": "/static/media/Feature3.7e9bf9959c891bf7156d.jpeg",
+    "static/media/Feature6.jpeg": "/static/media/Feature6.72b440151862c28b7a29.jpeg",
+    "static/media/growth.png": "/static/media/growth.ff320952b74d676f5284.png",
+    "static/media/Feature1.jpeg": "/static/media/Feature1.e04ad6f64ebd53383ab1.jpeg",
+    "static/media/water2.jpg": "/static/media/water2.f7a2d3d9fc048d1aacca.jpg",
+    "static/media/Feature5.jpeg": "/static/media/Feature5.94291a3e88fb80873d70.jpeg",
+    "static/media/pesticide2.jpg": "/static/media/pesticide2.368125a878db5d7a25b6.jpg",
+    "static/media/Feature2.jpeg": "/static/media/Feature2.560bfac35316e3b5aafc.jpeg",
+    "static/media/Profile.png": "/static/media/Profile.697fdcd21f6d157b9073.png",
+    "static/media/playstore.png": "/static/media/playstore.82b4831979e0ce7c733e.png",
+    "static/media/Appstore.png": "/static/media/Appstore.d0c5839937e3c36285f6.png",
+    "static/media/Ach.jpg": "/static/media/Ach.e3bb9470044e14c49c73.jpg",
+    "static/media/pet.avif": "/static/media/pet.369ae4c975d89978108f.avif",
+    "index.html": "/index.html",
+    "main.c73ca295.css.map": "/static/css/main.c73ca295.css.map",
+    "main.52ac3656.js.map": "/static/js/main.52ac3656.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c73ca295.css",
+    "static/js/main.52ac3656.js"
+  ]
+}
