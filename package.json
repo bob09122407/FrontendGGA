@@ -40,7 +40,7 @@
   },
   "scripts": {
     "start": "npm start",
-    "build": "npm i",
+    "build": "npm i --legacy-peer-deps",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
