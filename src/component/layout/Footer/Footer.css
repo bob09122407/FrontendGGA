@@ -1,13 +1,70 @@
 footer {
-    padding: 2vmax;
-    background-color: rgb(34, 33, 33);
-    color: white;
-    display: flex;
-    align-items: center;
-    bottom: 0;
-    width: 100%;
+  position: relative;
+  padding: 2vmax;
+  background-color: rgb(34, 33, 33);
+  color: white;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+}
+
+footer .wave {
+  position: absolute;
+  top:-60px;
+  left: 0;
+  width: 3000px;
+  height: 90px;
+  /* margin-top: em; */
+  background:  url(wave.png);
+  background-size: 1000px 100px;
+}
+
+footer .wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWave 3s linear infinite;
+}
+
+footer .wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+  0% {
+    background-position-x: 1000px;
   }
-  
+  100% {
+    background-position-x: 0px;
+  }
+}
+
+@keyframes animateWave_02 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
   .leftFooter,
   .rightFooter {
     flex-basis: 20%;
