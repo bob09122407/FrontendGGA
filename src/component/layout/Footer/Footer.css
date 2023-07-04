@@ -13,7 +13,7 @@ footer .wave {
   position: absolute;
   top:-60px;
   left: 0;
-  width: 3000px;
+  width: 100%;
   height: 90px;
   /* margin-top: em; */
   background:  url(wave.png);
@@ -141,7 +141,17 @@ footer .wave#wave4 {
     .midFooter > h2 {
         font-size: 3.5vmax;
       }
-      
   }
   
+  @media (max-width: 768px) {
+    footer .wave {
+      width: 80%; /* Adjust the width percentage as needed */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    footer .wave {
+      width: 100%; /* Adjust the width percentage as needed */
+    }
+  }
   
