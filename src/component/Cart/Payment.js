@@ -9,7 +9,7 @@ import "./payment.css";
 import { createOrder, clearErrors } from "../../actions/orderAction";
 import { clearCart } from "../../actions/cartAction";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "./../apiConfig";
+import { BASE_URL } from "../../apiConfig";
 const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
 
