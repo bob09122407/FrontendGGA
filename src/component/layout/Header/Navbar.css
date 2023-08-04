@@ -23,8 +23,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  z-index: 99;
+  position: relative;
+  z-index: 1001;
   background-color: #0000008b;
 }
 
