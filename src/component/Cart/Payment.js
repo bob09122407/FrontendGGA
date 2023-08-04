@@ -4,20 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../layout/MetaData";
 import { Typography } from "@material-ui/core";
 import { useAlert } from "react-alert";
-import {
-  CardNumberElement,
-  CardCvcElement,
-  CardExpiryElement,
-  useStripe,
-  useElements,
-} from "@stripe/react-stripe-js";
-
 import axios from "axios";
 import "./payment.css";
-import CreditCardIcon from "@material-ui/icons/CreditCard";
-import EventIcon from "@material-ui/icons/Event";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import {createOrder, clearErrors} from "../../actions/orderAction";
+import { createOrder, clearErrors } from "../../actions/orderAction";
 import { clearCart } from "../../actions/cartAction";
 import { useNavigate } from "react-router-dom";
 
@@ -26,88 +15,76 @@ const Payment = () => {
 
   const dispatch = useDispatch();
   const alert = useAlert();
-  const stripe = useStripe();
-  const elements = useElements();
   const payBtn = useRef(null);
- const navigate=useNavigate();
+  const navigate = useNavigate();
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.newOrder);
 
-  const paymentData = {
-    amount: Math.round(orderInfo.totalPrice * 100),
-  };
-
-  const order = {
-    shippingInfo,
-    orderItems: cartItems,
-    itemsPrice: orderInfo.subtotal,
-    taxPrice: orderInfo.tax,
-    shippingPrice: orderInfo.shippingCharges,
-    totalPrice: orderInfo.totalPrice,
-  };
-
-  const submitHandler = async (e) => {
-    e.preventDefault();
-
-    payBtn.current.disabled = true;
+  const checkoutHandler = async (event) => {
+    event.preventDefault();
 
     try {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      const { data } = await axios.post(
-        "/api/v1/payment/process",
-        paymentData,
-        config
-      );
+      const { data: { key } } = await axios.get("/api/v1/getkey");
 
-      const client_secret = data.client_secret;
-
-      if (!stripe || !elements) return;
-
-      const result = await stripe.confirmCardPayment(client_secret, {
-        payment_method: {
-          card: elements.getElement(CardNumberElement),
-          billing_details: {
-            name: user.name,
-            email: user.email,
-            address: {
-              line1: shippingInfo.address,
-              city: shippingInfo.city,
-              state: shippingInfo.state,
-              postal_code: shippingInfo.pinCode,
-              country: shippingInfo.country,
-            },
-          },
-        },
+      const { data: { order } } = await axios.post("/api/v1/checkout", {
+        amount: orderInfo.totalPrice,
+        currency: "INR"
       });
 
-      if (result.error) {
-        payBtn.current.disabled = false;
+      const options = {
+        key,
+        amount: order.amount.toString(),
+        currency: order.currency,
+        name: "6 Pack Programmer",
+        description: "Tutorial of RazorPay",
+        image: "",
+        order_id: order.id,
+        prefill: {
+          name: user.name,
+          email: user.email,
+          contact: shippingInfo.phone
+        },
+        notes: {
+          address: shippingInfo.address
+        },
+        theme: {
+          color: "#121212"
+        },
+        handler: async (response) => {
+          try {
+            const paymentId = response.razorpay_payment_id;
 
-        alert.error(result.error.message);
-      } else {
-        if (result.paymentIntent.status === "succeeded") {
-          order.paymentInfo = {
-            id: result.paymentIntent.id,
-            status: result.paymentIntent.status,
-          };
+            const order = {
+              orderItems: cartItems,
+              shippingInfo,
+              itemsPrice: orderInfo.subtotal,
+              taxPrice: orderInfo.tax,
+              shippingPrice: orderInfo.shippingCharges,
+              totalPrice: orderInfo.totalPrice,
+              paymentInfo: {
+                id: paymentId,
+                status: "succeeded"
+              }
+            };
 
-          dispatch(createOrder(order));
+            // Make an API request to store the order details in the database
+            // await axios.post("/api/orders", order);
 
-          navigate("/success");
-          dispatch(clearCart());
-        } else {
-          alert.error("There's some issue while processing payment ");
+            dispatch(createOrder(order));
+            dispatch(clearCart());
+
+            navigate("/success");
+          } catch (error) {
+            alert.error("An error occurred while processing the payment. Please try again.");
+          }
         }
-      }
+      };
+
+      const razor = new window.Razorpay(options);
+      razor.open();
     } catch (error) {
-      payBtn.current.disabled = false;
-      // alert.error(error.response.data.message);
-      alert.error(error.response?.data?.message || "An error occurred while processing payment");
+      alert.error("An error occurred while processing the payment. Please try again.");
     }
   };
 
@@ -123,21 +100,11 @@ const Payment = () => {
       <MetaData title="Payment" />
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
-        <form className="paymentForm" onSubmit={submitHandler}>
+        <form className="paymentForm" onSubmit={checkoutHandler}>
           <Typography>Card Info</Typography>
-          <div>
-            <CreditCardIcon />
-            <CardNumberElement options={{ style: { base: { fontSize: '16px', color: '#fff'} } }} className="paymentInput" />
-          </div>
-          <div>
-            <EventIcon />
-            <CardExpiryElement options={{ style: { base: { fontSize: '16px', color: '#fff' } } }} className="paymentInput" />
-          </div>
-          <div>
-            <VpnKeyIcon />
-            <CardCvcElement options={{ style: { base: { fontSize: '16px' , color: '#fff'} } }} className="paymentInput" />
-          </div>
-
+          {/* Render your Razorpay payment form elements here */}
+          {/* Example: */}
+         
           <input
             type="submit"
             value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
@@ -147,10 +114,6 @@ const Payment = () => {
         </form>
       </div>
     </Fragment>
-  );
-};
+  )};
 
-export default Payment;
-
-
-
+  export default Payment

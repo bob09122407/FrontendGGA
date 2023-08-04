@@ -46,27 +46,30 @@
   }
 
   .card {
-    flex: 0 0 calc(100% -10px);
-    margin-right: 20px;
+    /* flex: 0 0 calc(100% -10px); */
+    /* margin-right: 20px; */
   
   }
 
-  .card:first-child {
+  /* .card:first-child {
     margin-left: 1700px;
-  }
+  } */
 }
 @media (max-width: 450px) {
 
 
-  .card:first-child {
+  /* .card:first-child {
     margin-left: 1750px;
-  }
+  } */
 }
-@media (max-width: 380px) {
-
+@media (max-width: 475px) {
+  .card {
+    flex: 0 0 200px;
+  
+  }
 
   .card:first-child {
-    margin-left: 1550px;
+    margin-left: 1000px;
   }
 }
 

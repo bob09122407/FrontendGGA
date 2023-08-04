@@ -29,6 +29,11 @@ export const faqs = [
         id: 3,
         question: "What plants can I grow ?",
         answer: "Pretty much anything! Farmhouse POD is designed to give the plant exactly what it needs. Whether you want an easy-access herb garden for your counter or beautiful blooming flowers, Farmhouse has you covered."
+    },
+    {
+        id: 4,
+        question: "What plants can I grow ?",
+        answer: "Pretty much anything! Farmhouse POD is designed to give the plant exactly what it needs. Whether you want an easy-access herb garden for your counter or beautiful blooming flowers, Farmhouse has you covered."
     }
 ]
 

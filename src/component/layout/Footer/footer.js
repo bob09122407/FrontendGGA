@@ -40,12 +40,12 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer id="footer" className="footer">
-      <div className="waves">
+      {/* <div className="waves">
         <div className="wave" id="wave1"></div>
         <div className="wave" id="wave2"></div>
         <div className="wave" id="wave3"></div>
         <div className="wave" id="wave4"></div>
-      </div>
+      </div> */}
       <div className="leftFooter">
         <h4>DOWNLOAD OUR APP</h4>
         <p>Download App for Android and IOS mobile phone</p>

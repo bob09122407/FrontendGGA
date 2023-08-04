@@ -4,11 +4,30 @@
     background-color: #4d514c79;
     height: 65vh;
     margin: 2vmax;
+
   }
   
   .paymentForm {
     width: 22%;
     height: 100%;
+
+  }
+  .checkOutBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .checkOutBtn > button {
+    background-color: rgb(239, 255, 229);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 0.8vmax 4vmax;
+    width: 50%;
+    font: 300 0.8vmax "Roboto";
+    margin: 1vmax 4vmax;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s;
   }
   
   .paymentForm > p {

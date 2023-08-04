@@ -178,8 +178,8 @@
     }
   
     .cartInput > input {
-      width: 2vmax;
-      padding: 1.5vmax;
+      width: 3vmax;
+      padding: 1vmax;
       font: 400 1.8vmax "Roboto";
     }
   

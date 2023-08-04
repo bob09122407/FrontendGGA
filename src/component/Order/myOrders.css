@@ -1,6 +1,7 @@
 
   .myOrdersPage{
     margin-top: 4.5rem;
+  
   }
   .Top {
     width: 100vw;
@@ -9,7 +10,7 @@
     padding: 0 7vmax;
     box-sizing: border-box;
     background-color: #000000;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     height: 100vh;

@@ -9,17 +9,18 @@ footer {
   width: 100%;
 }
 
-footer .wave {
+/* footer .wave {
   position: absolute;
   top:-60px;
   left: 0;
-  width: 100%;
-  height: 90px;
+  width: 100%; */
+  /* height: 90px; */
   /* margin-top: em; */
-  background:  url(wave.png);
-  background-size: 1000px 100px;
-}
-
+  /* background:  url(wave.png); */
+  /* background-size: 1000px 100px; */
+  /* visibility:hidden; */
+/* } */
+/* 
 footer .wave#wave1 {
   z-index: 1000;
   opacity: 1;
@@ -64,7 +65,7 @@ footer .wave#wave4 {
   100% {
     background-position-x: 1000px;
   }
-}
+} */
   .leftFooter,
   .rightFooter {
     flex-basis: 20%;
@@ -142,16 +143,22 @@ footer .wave#wave4 {
         font-size: 3.5vmax;
       }
   }
-  
-  @media (max-width: 768px) {
+/*   
+  @media (max-width: 765px) {
     footer .wave {
-      width: 80%; /* Adjust the width percentage as needed */
+      width: 80%; 
     }
   }
+  @media (max-width: 769px) {
+    footer .wave {
+      width: 100%; 
+    }
+  }
+  
   
   @media (max-width: 480px) {
     footer .wave {
-      width: 100%; /* Adjust the width percentage as needed */
+      width: 100%;
     }
-  }
+  } */
   
