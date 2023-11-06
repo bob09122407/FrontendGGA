@@ -6,11 +6,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
   }
   
   .shippingBox {
-    background-color: #4d514c79;
+    background-color: #0000003b;
     width: 25vw;
     height: 90vh;
     box-sizing: border-box;
@@ -20,10 +20,10 @@
   
   .shippingHeading {
     text-align: center;
-    color: rgba(226, 255, 175, 0.664);
+    color: rgba(0, 0, 0, 0.664);
     font: 400 1.3vmax "Roboto";
     padding: 1.3vmax;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.205);
+    border-bottom: 1px solid rgb(0, 0, 0);
     width: 50%;
     margin: auto;
   }
@@ -51,7 +51,7 @@
     padding-right: 1vmax;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.267);
+    border: 1px solid rgba(0, 0, 0, 0.267);
     border-radius: 4px;
     font: 300 0.9vmax cursive;
     outline: none;

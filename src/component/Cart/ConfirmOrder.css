@@ -1,17 +1,17 @@
 .confirmOrderPage {
     height: 100vh;
-    background-color: #3433339a;
+    background-color: #ffffff9a;
     display: grid;
     grid-template-columns: 6fr 3fr;
   }
   
   .confirmOrderPage > div:last-child {
-    border-left: 1px solid rgba(255, 255, 255, 0.247);
+    border-left: 1px solid rgb(0, 0, 0);
   }
   
   .confirmshippingArea {
     padding: 5vmax;
-    color:#e4ffcc;
+    color:#000000;
     padding-bottom: 0%;
   }
   
@@ -26,7 +26,7 @@
   }
 
   .confirmCartItemsContainer {
-    background-color:#4d514c79;
+    background-color:#00000051;
     margin: 2vmax;
   }
   
@@ -37,12 +37,12 @@
   
   .confirmshippingAreaBox > div > p {
     font: 400 1vmax "Roboto";
-    color: rgb(227, 255, 197);
+    color: rgb(0, 0, 0);
   }
   .confirmshippingAreaBox > div > span {
     margin: 0 1vmax;
     font: 100 1vmax "Roboto";
-    color: #ffffff;
+    color: #0000009c;
   }
   
   .confirmCartItems > p {
@@ -50,7 +50,7 @@
   }
   
   .confirmCartItems {
-    color:#e4ffcc;
+    color:#000000;
     padding: 5vmax;
     padding-top: 2vmax;
   }
@@ -73,7 +73,7 @@
   }
   
   .confirmCartItemsContainer > div > a {
-    color: #ffffff;
+    color: #000000;
     margin: 0 2vmax;
     width: 60%;
     text-decoration: none;
@@ -81,18 +81,18 @@
   
   .confirmCartItemsContainer > div > span {
     font: 100 1vmax "Roboto";
-    color: #ffffff;
+    color: #000000;
   }
   
   .orderSummary {
     padding: 7vmax;
-    color: #e4ffcc;
+    color: #000000;
   }
   
   .orderSummary > p {
     text-align: center;
     font: 400 1.8vmax "Roboto";
-    border-bottom: 1px solid rgba(255, 255, 255, 0.267);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.267);
     padding: 1vmax;
     width: 100%;
     margin: auto;
@@ -106,14 +106,14 @@
     margin: 2vmax 0;
   }
   .orderSummary > div > div > span {
-    color: rgba(255, 255, 255, 0.692);
+    color: rgba(0, 0, 0, 0.692);
   }
   
   .orderSummaryTotal {
     display: flex;
     font: 300 1vmax "Roboto";
     justify-content: space-between;
-    border-top: 1px solid rgba(255, 255, 255, 0.363);
+    border-top: 1px solid rgba(0, 0, 0, 0.363);
     padding: 2vmax 0;
   }
   

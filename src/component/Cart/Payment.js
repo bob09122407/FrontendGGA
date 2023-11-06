@@ -25,7 +25,7 @@ const Payment = () => {
     event.preventDefault();
 
     try {
-      const { data: { key } } = await axios.get(` ${ BASE_URL }/api/v1/getkey`);
+      const { data: { key } } = await axios.get(`/api/v1/getkey`);
      
       const { data: { order } } = await axios.post(`/api/v1/checkout`, {
         amount: orderInfo.totalPrice,

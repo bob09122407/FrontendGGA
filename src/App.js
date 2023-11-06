@@ -23,7 +23,7 @@ import OrderSuccess from './component/Cart/OrderSuccess';
 import MyOrders from './component/Order/MyOrders';
 import OrderDetails from './component/Order/OrderDetails';
 import ContactPage from './component/Contact/contact';
-import About from './component/About/about';
+// import About from './component/About/about';
 import axios from 'axios';
 
 function ProtectedRoute({ isAdmin, component: Component, ...rest }) {
@@ -80,7 +80,7 @@ function App() {
         <Route exact path="/password/reset/:token" element={<ResetPassword />} />
         <Route exact path="/contact" element={<ContactPage />} />
         <Route exact path="/cart" element={<Cart />} />
-        <Route exact path="/about" element={<About />} />
+        {/* <Route exact path="/about" element={<About />} /> */}
         <Route exact path="/shipping" element={<ProtectedRoute component={Shipping} />} />
         <Route exact path="/order/confirm" element={<ProtectedRoute component={ConfirmOrder} />} />
         <Route exact path="/success" element={<ProtectedRoute component={OrderSuccess} />} />

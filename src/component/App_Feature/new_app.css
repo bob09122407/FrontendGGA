@@ -1,0 +1,114 @@
+/* YourComponent.css */
+
+.container2 {
+    display: flex;
+    background-color: #ffffff;
+}
+  
+.left-side {
+    flex: 2; /* Left side takes 2/3 of the container */
+    padding: 20px;
+    background-color: #ffffff; /* Left side background color */
+}
+  
+.top-images {
+    display: flex;
+    justify-items:flex-start;
+   
+}
+
+.top-images img {
+    width: 200px; /* Increase the size of the circle images */
+    height: 200px;
+    margin-right: 10px; /* Adjust the space between the circles */
+    
+}
+
+.top-images #space1{
+    margin-left: -50px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+   
+}
+
+.details {
+    display: flex;
+    padding-left: 2rem;
+    justify-content: space-between;
+
+}
+#head{
+    color: rgba(0, 0, 0, 0.372);
+    
+}
+#head1{
+    color: rgba(0, 0, 0, 0.372);
+    margin-left: 2.5rem;
+}
+
+.column {
+    
+    flex: 1;
+    padding: 10px;
+     /* Add borders to the columns */
+    margin-right: 10px; /* Add space between the columns */
+}
+
+.column:last-child {
+    margin-right: 0; /* Remove margin from the last column */
+}
+
+.column h2 {
+    font-size: 18px;
+}
+
+.column p {
+    font-size: 14px;
+}
+
+.right-side {
+    flex: 1; /* Right side takes 1/3 of the container */
+}
+
+.right-side img {
+    width: 130%; /* Image takes the full width of the right side */
+    height: auto;
+}
+
+
+@media screen and (max-width:1000px) {
+    .left-side{
+        display: block;
+    }
+    .details {
+        display: block;
+        padding-left: 2rem;
+        justify-content: space-between;
+    
+    }
+    .top-images img {
+        width: 130px; /* Increase the size of the circle images */
+        height: 130px;
+        margin-right: 0px; /* Adjust the space between the circles */
+        
+    }
+ 
+    .right-side{
+        position:relative;
+    }
+    .container2 {
+        display: block;
+        background-color: #ffffff;
+    }
+  
+    .right-side img {
+        width: 100%; /* Image takes the full width of the right side */
+        height: auto;
+    }
+    
+}
+  
+  

@@ -69,6 +69,7 @@ import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 import Slideshow from '../Info/Slideshow.js';
 import Appfeature from '../App_Feature/Appfeature.js';
+import Newapp from "../App_Feature/new_app.js";
 import Video from "../video/Video.js"
 // import Testimonial from "../../component/Testimonial"
 import FAQs from '../../component/FAQs'
@@ -100,7 +101,7 @@ const Home = () => {
               <Slideshow />
             </div>
             <div className="homeHeading1">
-              <Appfeature />
+              <Newapp/>
             </div>
             <h2 className="homeHeading">Featured Products</h2>
             <div className="container" id="container">

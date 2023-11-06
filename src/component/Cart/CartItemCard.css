@@ -19,13 +19,13 @@
   
   .CartItemCard > div > a {
     font: 300 0.9vmax cursive;
-    color: rgba(255, 255, 255, 0.815);
+    color: rgba(0, 0, 0, 0.815);
     text-decoration: none;
   }
   
   .CartItemCard > div > span {
     font: 300 0.9vmax "Roboto";
-    color: rgba(255, 255, 255, 0.815);
+    color: rgba(0, 0, 0, 0.815);
   }
   
   .CartItemCard > div > p {

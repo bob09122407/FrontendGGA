@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaShoppingCart, FaUser, FaSearch, FaBars } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
-import LogoImage from '../../../Images/gga8.png';
+import LogoImage from '../../../Images/gga8final.png';
 import './Navbar.css';
 
 const Header = () => {
@@ -32,18 +32,6 @@ const Header = () => {
       <div className="logo">
         <img src={LogoImage} alt="Logo" />
       </div>
-      <div className="search-box">
-        <form onSubmit={searchSubmitHandler}>
-          <input
-            type="text"
-            placeholder="Search a Product ..."
-            onChange={(e) => setKeyword(e.target.value)}
-          />
-          <button type="submit">
-            <FaSearch />
-          </button>
-        </form>
-      </div>
       <ul>
         <li>
           <Link to="/" className="Option">
@@ -60,25 +48,37 @@ const Header = () => {
             Contact
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/about" className="Option">
             About
           </Link>
-        </li>
+        </li> */}
+        <div className="search-box">
+        <form onSubmit={searchSubmitHandler}>
+          <input
+            type="text"
+            placeholder="Search a Product ..."
+            onChange={(e) => setKeyword(e.target.value)}
+          />
+          <button type="submit">
+            <FaSearch />
+          </button>
+        </form>
+      </div>
         <li>
-          <Link to="/cart" className="Option">
+          <Link to="/cart" className="Option" id="new">
             <FaShoppingCart />
           </Link>{' '}
         </li>
         <li>
           {' '}
-          <Link to="/login" className="Option">
+          <Link to="/login" className="Option" id ="new">
             <FaUser />
           </Link>
         </li>
       </ul>
       <div className="menu">
-        <label htmlFor="chk1">
+        <label className='menu-bar' htmlFor="chk1">
           <FaBars />
         </label>
       </div>

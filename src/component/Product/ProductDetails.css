@@ -1,5 +1,5 @@
 .ProductDetails {
-  background-color: #141812db;
+  background-color: #ffffffdb;
   width: 100vw;
   max-width: 100%;
   padding: 6vmax;
@@ -15,7 +15,7 @@
   align-items: center;
   padding: 2vmax;
   box-sizing: border-box;
-  border: 1px solid white;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .ProductDetails > div:last-child {
@@ -29,12 +29,12 @@
 }
 
 .detailsBlock-1 > h2 {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font: 600 1.6vmax "Roboto";
 }
 
 .detailsBlock-1 > p {
-  color: rgba(255, 255, 255, 0.582);
+  color: rgba(0, 0, 0, 0.582);
   font: 200 0.6vmax cursive;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .detailsBlock-3 > h1 {
-  color: rgb(224, 255, 185);
+  color: rgb(9, 9, 9);
   font: 400 1.8vmax "Franklin Gothic Medium";
   margin: 1vmax 0;
 }
@@ -72,7 +72,7 @@
   background-color: rgba(255, 255, 255, 0.616);
   padding: 0.5vmax;
   cursor: pointer;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   transition: all 0.5s;
 }
 .detailsBlock-3-1-1 > button:hover {
@@ -110,13 +110,13 @@
   border-top: 1px solid rgba(0, 0, 0, 0.205);
   border-bottom: 1px solid rgba(0, 0, 0, 0.205);
   padding: 1vmax 0;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font: 400 1vmax "Roboto";
   margin: 1vmax 0;
 }
 
 .detailsBlock-4 {
-  color: rgba(255, 255, 255, 0.897);
+  color: rgba(0, 0, 0, 0.897);
   font: 500 1.2vmax sans-serif;
 }
 
@@ -174,8 +174,8 @@
 
 .reviewCard {
   flex: none;
-  box-shadow: 0 0 5px rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
   width: 30vmax;
   display: flex;
   flex-direction: column;

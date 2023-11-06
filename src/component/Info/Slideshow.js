@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../../ui/card.js';
 import './slideshow.css';
-import photo1 from "../../Images/growth.png";
-import photo2 from "../../Images/pet.avif";
-import photo3 from "../../Images/autop.png";
-import photo4 from "../../Images/fourth.png";
-import photo5 from "../../Images/water2.jpg";
-import photo6 from "../../Images/pesticide2.jpg";
+import photo1 from "../../Images/savings.png";
+import photo2 from "../../Images/pet.png";
+import photo3 from "../../Images/automated.png";
+import photo4 from "../../Images/organic.png";
+import photo5 from "../../Images/water.png";
+import photo6 from "../../Images/pesticide.png";
 
 const Carousel = () => {
   const data = [

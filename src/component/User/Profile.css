@@ -149,7 +149,7 @@
     top: 0%;
     left: 0%;
     max-width: 100%;
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(255, 255, 255);
   }
   
   .profileContainer > div {
@@ -163,7 +163,7 @@
   }
   
   .profileContainer > div:first-child > h1 {
-    color: var(--main-text-green);
+    color: black;
     font: 500 2.2vmax "Roboto";
     transform: translateX(-10vmax) translateY(-2vmax);
   }
@@ -173,7 +173,7 @@
     width: 20vmax;
     border-radius: 100%;
     transition: all 0.5s;
-    border: 2px solid var(--main-text-green);
+    border: 2px solid black;
   }
   
   .profileContainer > div:first-child > img:hover {
@@ -208,12 +208,12 @@
   }
   
   .profileContainer > div:last-child > div > h4 {
-    color: #ffffff;
+    color: #000000;
     font: 400 1.2vmax "Roboto";
   }
   
   .profileContainer > div:last-child > div > p {
-    color: var(--main-text-green);
+    color: rgba(0, 0, 0, 0.491);
     font: 400 1vmax cursive;
     margin: 0.2vmax;
   }

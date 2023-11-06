@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './appfeature.css';
-
 import photo1 from "../../Images/Feature1.jpeg";
 import photo2 from "../../Images/Feature2.jpeg";
 import photo3 from "../../Images/Feature3.jpeg";
@@ -39,6 +38,7 @@ const Appfeature = () => {
 
       <div className="app-features">
         <h2>App Features</h2>
+        
         <ul>
           <li>
             <span className="tick-mark">&#10003;</span> Control your pod like a pet with our mobile application

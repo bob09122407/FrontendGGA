@@ -37,8 +37,8 @@
   
   .cartPage {
     padding: 5vmax;
-    background-color:#333533e1;
-    color: white;
+    background-color:#ffffffe1;
+    color: rgb(0, 0, 0);
   }
   
   .cartHeader {
@@ -69,13 +69,13 @@
   }
   
   .hello{
-    color:rgb(255, 255, 255) !important;
+    color:rgb(0, 0, 0) !important;
   }
   .cartInput {
     display: flex;
     align-items: center;
     height: 8vmax;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .cartInput > button {
@@ -109,7 +109,7 @@
     box-sizing: border-box;
     font: 300 1.2vmax cursive;
     justify-content: flex-end;
-    color: rgba(255, 255, 255, 0.753);
+    color: rgba(0, 0, 0, 0.753);
   }
   
   .cartGrossProfit {

@@ -10,18 +10,18 @@
 
 :root{
   
-    --primary-hue:#1F2833;
+    /* --primary-hue:#1F2833; */
     --gray-hue:240;
-    --color-primary:hsl(var(--primary-hue),100%,50%);
-    --color-primary-variant:#1d1c11;
-    --color-secondary:#ffb116;
+    /* --color-primary:hsl(var(--primary-hue),100%,50%); */
+    /* --color-primary-variant:#1d1c11; */
+    /* --color-secondary:#ffb116; */
     --color-gray-100:#66FCF1;
     /*--color-gray-200:hsl(84, 100%, 70%);*/
-    --color-gray-200:#000000;
-    --color-gray-300:hsl(var(--gray-hue),24%,64%);
-    --color-gray-400:hsl(var(--gray-hue),16%,41%);
-    --color-gray-500:#1F2833;
-    --color-gray-600:#0B0C10;
+    /* --color-gray-200:#000000; */
+    /* --color-gray-300:hsl(var(--gray-hue),24%,64%); */
+    /* --color-gray-400:hsl(var(--gray-hue),16%,41%); */
+    /* --color-gray-500:#1F2833; */
+    /* --color-gray-600:#0B0C10; */
     --main-text-green:rgb(176, 255, 176) ;
 
     --container-width-lg:80%;  /*laptop*/
@@ -34,10 +34,10 @@
 /*GENERAL STYLES*/
 body{
     font-family: 'Montserrat', sans-serif;
-    color: var(--color-gray-200);
+    /* color: var(--color-gray-200); */
     /* line-height: 1.7; */
     overflow-x: hidden;
-    background: var(--color-gray-600);
+    /* background: var(--color-gray-600); */
 }
 
 /* .container{
@@ -46,9 +46,9 @@ body{
     margin-inline: auto;
 } */
 
-h1,h2,h3,h4,h5{
+h1,h2,h3,h5{
     line-height: 1.2;
-    color: var(--main-text-green);
+    color: black;
 }
 
 h1{
@@ -67,7 +67,7 @@ a{
     font-size: 0.9rem;
 }
 
-section{
+/* section{
     margin-top: 10rem;
   }
   
@@ -84,7 +84,7 @@ section{
     border-radius: 1rem;
     color: var(--color-secondary);
     font-size: 1.5rem;
-  }
+  } */
   
    
 

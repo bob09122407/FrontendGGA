@@ -3,7 +3,7 @@
     width: 15vw;
     border-bottom: 1px solid rgba(0, 0, 0, 0.171);
     padding: 2vmax;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
   
     font: 500 1.5vmax "Roboto";
     text-align: center;
@@ -20,7 +20,7 @@
   }
   
   .paginationBox {
-    color:aliceblue;
+    color:rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     margin: 6vmax;
@@ -43,7 +43,7 @@
   }
   .page-item:first-child {
     border-radius: 5px 0 0 5px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
   }
   
   .page-item:last-child {
@@ -53,7 +53,7 @@
   .page-link {
     text-decoration: none;
     font: 300 0.7vmax "Roboto";
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     transition: all 0.3s;
   }
   
@@ -74,7 +74,7 @@
   }
   
   .filterBox {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     width: 10vmax;
     position: absolute;
     top: 10vmax;
@@ -83,19 +83,19 @@
   
   .categoryBox {
     padding: 0%;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
   }
   
   .category-link {
     list-style: none;
-    color: rgb(255, 255, 255);
+    color: black;
     font: 400 0.8vmax "Roboto";
     margin: 0.4vmax;
     cursor: pointer;
     transition: all 0.5s;
   }
   .category-link:hover {
-    color: rgb(200, 254, 152);
+    color: rgba(0, 0, 0, 0.406);
   }
   
   .filterBox > fieldset {
