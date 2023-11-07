@@ -77,14 +77,17 @@ const MyOrders = () => {
       });
     });
 
-  useEffect(() => {
-    // if (error) {
-    //   alert.error(error);
-    //   dispatch(clearErrors());
-    // }
+ 
+    useEffect(() => {
+      if (error) {
+        // alert.error(error);
+        dispatch(clearErrors());
+      } else {
+        dispatch(myOrders());
+      }
+    }, [dispatch, alert, error]);
+    
 
-    dispatch(myOrders());
-  }, [dispatch, alert, error]);
 
   return (
     <Fragment>
