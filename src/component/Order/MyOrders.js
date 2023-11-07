@@ -17,6 +17,7 @@ const MyOrders = () => {
 
   const { loading, error, orders } = useSelector((state) => state.myOrders);
   const { user } = useSelector((state) => state.user);
+  console.log(user);
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
