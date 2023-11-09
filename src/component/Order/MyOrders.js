@@ -83,6 +83,7 @@ const MyOrders = () => {
         // alert.error(error);
         dispatch(clearErrors());
       } else {
+        console.log('Dispatcing orders');
         dispatch(myOrders());
       }
     }, [dispatch, alert, error]);
