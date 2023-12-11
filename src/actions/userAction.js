@@ -39,7 +39,7 @@ import {
   import axios from "axios";
   import { BASE_URL } from "./../apiConfig";
 
-  axios.defaults.withCredentials = true;
+  // axios.defaults.withCredentials = true;
 
   // Login
   export const login = (email, password) => async (dispatch) => {
