@@ -5,25 +5,18 @@ import MetaData from "../layout/MetaData";
 import { Typography } from "@material-ui/core";
 import { useAlert } from "react-alert";
 import {
-  CardNumberElement,
-  CardElement,
   PaymentElement,
-  CardCvcElement,
-  CardExpiryElement,
-  ExpressCheckoutElement,
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
 
 import axios from "axios";
 import "./stripepayment.css";
-import CreditCardIcon from "@material-ui/icons/CreditCard";
-import EventIcon from "@material-ui/icons/Event";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import {createOrder, clearErrors} from "../../actions/orderAction";
+import { createOrder, clearErrors } from "../../actions/orderAction";
 import { clearCart } from "../../actions/cartAction";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "./../../apiConfig";
+
 const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
 
@@ -32,11 +25,11 @@ const Payment = () => {
   const stripe = useStripe();
   const elements = useElements();
   const payBtn = useRef(null);
- const navigate=useNavigate();
+  const navigate = useNavigate();
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.newOrder);
-  console.log(<ExpressCheckoutElement/>);
+
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice * 100),
   };
@@ -56,26 +49,18 @@ const Payment = () => {
     payBtn.current.disabled = true;
 
     try {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
       const { data } = await axios.post(
         `${BASE_URL}/api/v1/payment/process`,
-        paymentData,
-        config
+        paymentData
       );
 
       const client_secret = data.client_secret;
 
       if (!stripe || !elements) return;
 
-
-
-      const result = await stripe.confirmCardPayment(client_secret, {
+      const result = await stripe.confirmPayment(client_secret, {
         payment_method: {
-          card: elements.getElement(CardNumberElement),
+          card: elements.getElement(PaymentElement),
           billing_details: {
             name: user.name,
             email: user.email,
@@ -89,10 +74,9 @@ const Payment = () => {
           },
         },
       });
-    
+
       if (result.error) {
         payBtn.current.disabled = false;
-
         alert.error(result.error.message);
       } else {
         if (result.paymentIntent.status === "succeeded") {
@@ -111,11 +95,11 @@ const Payment = () => {
       }
     } catch (error) {
       payBtn.current.disabled = false;
-      // alert.error(error.response.data.message);
-      alert.error(error.response?.data?.message || "An error occurred while processing payment");
+      alert.error(
+        error.response?.data?.message ||
+          "An error occurred while processing payment"
+      );
     }
-
-    
   };
 
   useEffect(() => {
@@ -130,57 +114,18 @@ const Payment = () => {
       <MetaData title="Payment" />
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
-        {/* <form className="paymentForm" onSubmit={submitHandler}>
-         
-    <PaymentElement />
-    <input
-            type="submit"
-            value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
-            ref={payBtn}
-            className="paymentFormBtn"
-          />  */}
-
-        {/* </form> */}
-{/* 
-          <div id="checkout-page">
-            <CardElement/>
-            <input
-            type="submit"
-            value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
-            ref={payBtn}
-            className="paymentFormBtn" onClick={submitHandler}
-          />  
-      <ExpressCheckoutElement onConfirm={submitHandler} />
-    </div> */}
-       <form className="paymentForm" onSubmit={submitHandler}>
-          <Typography>Card Info</Typography>
-          <div>
-            <CreditCardIcon />
-            <CardNumberElement options={{ style: { base: { fontSize: '16px', color: '#fff'} } }} className="paymentInput" />
-          </div>
-          <div>
-            <EventIcon />
-            <CardExpiryElement options={{ style: { base: { fontSize: '16px', color: '#fff' } } }} className="paymentInput" />
-          </div>
-          <div>
-            <VpnKeyIcon />
-            <CardCvcElement options={{ style: { base: { fontSize: '16px' , color: '#fff'} } }} className="paymentInput" />
-          </div>
-
+        <form className="paymentForm" onSubmit={submitHandler}>
+          <PaymentElement />
           <input
             type="submit"
             value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
             ref={payBtn}
             className="paymentFormBtn"
           />
-          <ExpressCheckoutElement onConfirm={submitHandler} />
         </form>
-        
       </div>
     </Fragment>
   );
 };
 
 export default Payment;
-
-
