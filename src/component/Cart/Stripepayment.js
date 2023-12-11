@@ -1,10 +1,11 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../layout/MetaData";
 import { Typography } from "@material-ui/core";
 import { useAlert } from "react-alert";
 import {
+  PaymentElement,
   ExpressCheckoutElement,
   useStripe,
   useElements,
@@ -41,6 +42,13 @@ const Payment = () => {
     totalPrice: orderInfo.totalPrice,
   };
 
+  const [errorMessage, setErrorMessage] = useState();
+  const [loading, setLoading] = useState(false);
+
+  const handleError = (error) => {
+    setLoading(false);
+    setErrorMessage(error.message);
+  }
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -55,42 +63,24 @@ const Payment = () => {
       const client_secret = data.client_secret;
 
       if (!stripe || !elements) return;
-
-      const result = await stripe.confirmPayment(client_secret, {
-        payment_method: {
-          card: elements.getElement(ExpressCheckoutElement),
-          billing_details: {
-            name: user.name,
-            email: user.email,
-            address: {
-              line1: shippingInfo.address,
-              city: shippingInfo.city,
-              state: shippingInfo.state,
-              postal_code: shippingInfo.pinCode,
-              country: shippingInfo.country,
-            },
-          },
+      const {error} = await stripe.confirmPayment({
+        elements,
+        client_secret,
+        confirmParams: {
+          return_url: 'https://example.com/order/123/complete',
         },
       });
-
-      if (result.error) {
-        payBtn.current.disabled = false;
-        alert.error(result.error.message);
+  
+      if (error) {
+        // This point is only reached if there's an immediate error when
+        // confirming the payment. Show the error to your customer (for example, payment details incomplete)
+        handleError(error);
       } else {
-        if (result.paymentIntent.status === "succeeded") {
-          order.paymentInfo = {
-            id: result.paymentIntent.id,
-            status: result.paymentIntent.status,
-          };
-
-          dispatch(createOrder(order));
-
-          navigate("/success");
-          dispatch(clearCart());
-        } else {
-          alert.error("There's some issue while processing payment ");
-        }
+        // Your customer is redirected to your `return_url`. For some payment
+        // methods like iDEAL, your customer is redirected to an intermediate
+        // site first to authorize the payment, then redirected to the `return_url`.
       }
+     
     } catch (error) {
       payBtn.current.disabled = false;
       alert.error(
@@ -111,17 +101,13 @@ const Payment = () => {
     <Fragment>
       <MetaData title="Payment" />
       <CheckoutSteps activeStep={2} />
-      <div className="paymentContainer">
-        <form className="paymentForm" onSubmit={submitHandler}>
-          <ExpressCheckoutElement />
-          <input
-            type="submit"
-            value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
-            ref={payBtn}
-            className="paymentFormBtn"
-          />
-        </form>
-      </div>
+      <form onSubmit={submitHandler}>
+      <PaymentElement />
+      <button type="submit" ref={payBtn} disabled={!stripe || loading}>
+        Submit Payment
+      </button>
+      {errorMessage && <div>{errorMessage}</div>}
+    </form>
     </Fragment>
   );
 };
