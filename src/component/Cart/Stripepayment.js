@@ -5,12 +5,10 @@ import MetaData from "../layout/MetaData";
 import { Typography } from "@material-ui/core";
 import { useAlert } from "react-alert";
 import {
-  PaymentElement,
+  ExpressCheckoutElement,
   useStripe,
   useElements,
-  ExpressCheckoutElement,
 } from "@stripe/react-stripe-js";
-
 import axios from "axios";
 import "./stripepayment.css";
 import { createOrder, clearErrors } from "../../actions/orderAction";
@@ -20,7 +18,6 @@ import { BASE_URL } from "./../../apiConfig";
 
 const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
-
   const dispatch = useDispatch();
   const alert = useAlert();
   const stripe = useStripe();
@@ -61,7 +58,7 @@ const Payment = () => {
 
       const result = await stripe.confirmPayment(client_secret, {
         payment_method: {
-          card: elements.getElement(PaymentElement),
+          card: elements.getElement(ExpressCheckoutElement),
           billing_details: {
             name: user.name,
             email: user.email,
@@ -116,8 +113,7 @@ const Payment = () => {
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={submitHandler}>
-          {/* <PaymentElement /> */}
-          <ExpressCheckoutElement/>
+          <ExpressCheckoutElement />
           <input
             type="submit"
             value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
