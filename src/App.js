@@ -58,11 +58,11 @@ function App() {
 
     setStripeApiKey(data.stripeApiKey);
   }
-  // const options = {
-  //   mode: 'payment',
-  //   currency: 'inr',
-  //   amount: 1099,
-  // };
+  const options = {
+    mode: 'payment',
+    currency: 'inr',
+    amount: 1099,
+  };
 
   // useEffect(() => {
   //   // Load the Razorpay script dynamically
@@ -115,7 +115,7 @@ function App() {
           path="/process/payment"
           element={
             
-            <Elements stripe={loadStripe(stripeApiKey)}>
+            <Elements stripe={loadStripe(stripeApiKey)} options={options}>
               <ProtectedRoute component={Payment} />
             </Elements>
           }
