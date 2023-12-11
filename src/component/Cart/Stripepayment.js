@@ -8,6 +8,7 @@ import {
   PaymentElement,
   useStripe,
   useElements,
+  ExpressCheckoutElement,
 } from "@stripe/react-stripe-js";
 
 import axios from "axios";
@@ -115,7 +116,8 @@ const Payment = () => {
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={submitHandler}>
-          <PaymentElement />
+          {/* <PaymentElement /> */}
+          <ExpressCheckoutElement/>
           <input
             type="submit"
             value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
