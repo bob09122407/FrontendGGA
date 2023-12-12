@@ -61,19 +61,19 @@ function App() {
     setStripeApiKey(data.stripeApiKey);
   }
   useEffect(() => {
-    console.log("useEffect triggered with isAuthenticated:", isAuthenticated);
+    // console.log("useEffect triggered with isAuthenticated:", isAuthenticated);
   
     // Check if isAuthenticated is defined before proceeding
     if (typeof isAuthenticated === 'undefined') {
-      console.log("isAuthenticated is undefined. Skipping useEffect.");
+      // console.log("isAuthenticated is undefined. Skipping useEffect.");
       return;
     }
   
     const fetchData = async () => {
-      console.log("Before Dispatching loadUser. isAuthenticated:", isAuthenticated);
+      // console.log("Before Dispatching loadUser. isAuthenticated:", isAuthenticated);
   
       if (isAuthenticated) {
-        console.log("Fetching Stripe API key");
+      
         await getStripeApiKey();
       }
     };

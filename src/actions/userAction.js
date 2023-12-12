@@ -115,8 +115,8 @@ import {
   
       const config = { headers: { "Content-Type": "multipart/form-data" } };
   
-      const { data } = await axios.put(`/api/v1/me/update`, userData, config);
-      // const { data } = await axios.put(`${BASE_URL}/api/v1/me/update`, userData, config);
+      // const { data } = await axios.put(`/api/v1/me/update`, userData, config);
+      const { data } = await axios.put(`${BASE_URL}/api/v1/me/update`, userData, config);
       dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data.success });
     } catch (error) {
       dispatch({
@@ -133,16 +133,16 @@ import {
   
       const config = { headers: { "Content-Type": "application/json" } };
   
-      const { data } = await axios.put(
-        `/api/v1/password/update`,
-        passwords,
-        config
-      );
       // const { data } = await axios.put(
-      //   `${BASE_URL}/api/v1/password/update`,
+      //   `/api/v1/password/update`,
       //   passwords,
       //   config
       // );
+      const { data } = await axios.put(
+        `${BASE_URL}/api/v1/password/update`,
+        passwords,
+        config
+      );
       dispatch({ type: UPDATE_PASSWORD_SUCCESS, payload: data.success });
     } catch (error) {
       dispatch({
@@ -159,8 +159,8 @@ import {
   
       const config = { headers: { "Content-Type": "application/json" } };
   
-      const { data } = await axios.post(`/api/v1/password/forgot`, email, config);
-      // const { data } = await axios.post(`${BASE_URL}/api/v1/password/forgot`, email, config);
+      // const { data } = await axios.post(`/api/v1/password/forgot`, email, config);
+      const { data } = await axios.post(`${BASE_URL}/api/v1/password/forgot`, email, config);
       dispatch({ type: FORGOT_PASSWORD_SUCCESS, payload: data.message });
     } catch (error) {
       dispatch({
@@ -177,16 +177,16 @@ import {
   
       const config = { headers: { "Content-Type": "application/json" } };
   
-      const { data } = await axios.put(
-        `/api/v1/password/reset/${token}`,
-        passwords,
-        config
-      );
       // const { data } = await axios.put(
-      //   `${BASE_URL}/api/v1/password/reset/${token}`,
+      //   `/api/v1/password/reset/${token}`,
       //   passwords,
       //   config
       // );
+      const { data } = await axios.put(
+        `${BASE_URL}/api/v1/password/reset/${token}`,
+        passwords,
+        config
+      );
   
       dispatch({ type: RESET_PASSWORD_SUCCESS, payload: data.success });
     } catch (error) {

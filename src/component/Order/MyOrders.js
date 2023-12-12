@@ -17,7 +17,7 @@ const MyOrders = () => {
 
   const { loading, error, orders } = useSelector((state) => state.myOrders);
   const { user } = useSelector((state) => state.user);
-  console.log(user);
+  // console.log(user);
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
@@ -83,7 +83,7 @@ const MyOrders = () => {
         // alert.error(error);
         dispatch(clearErrors());
       } else {
-        console.log('Dispatcing orders');
+        // console.log('Dispatcing orders');
         dispatch(myOrders());
       }
     }, [dispatch, alert, error]);
