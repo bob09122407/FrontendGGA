@@ -60,22 +60,29 @@ function App() {
 
     setStripeApiKey(data.stripeApiKey);
   }
-
   useEffect(() => {
-    const fetchData = async () => {
-      // Load user only if authenticated
-      if (isAuthenticated) {
-        await store.dispatch(loadUser());
-      }
+    console.log("useEffect triggered with isAuthenticated:", isAuthenticated);
   
-      // Load Stripe API key only if authenticated
+    // Check if isAuthenticated is defined before proceeding
+    if (typeof isAuthenticated === 'undefined') {
+      console.log("isAuthenticated is undefined. Skipping useEffect.");
+      return;
+    }
+  
+    const fetchData = async () => {
+      console.log("Before Dispatching loadUser. isAuthenticated:", isAuthenticated);
+  
       if (isAuthenticated) {
+        console.log("Fetching Stripe API key");
         await getStripeApiKey();
       }
     };
   
     fetchData();
   }, [isAuthenticated]);
+  
+  
+
 
   return (
     <Router>
