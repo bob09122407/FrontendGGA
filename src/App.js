@@ -60,32 +60,22 @@ function App() {
 
     setStripeApiKey(data.stripeApiKey);
   }
-  // const options = {
-  //   mode: 'payment',
-  //   currency: 'usd',
-  //   amount: 1099,
-  // };
 
-  // useEffect(() => {
-  //   // Load the Razorpay script dynamically
-  //   const loadRazorpayScript = async () => {
-  //     const script = document.createElement('script');
-  //     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-  //     script.async = true;
-  //     script.onload = () => {
-  //       // Razorpay script is loaded, you can initialize it here if needed
-  //     };
-  //     document.body.appendChild(script);
-  //   };
-
-  //   loadRazorpayScript();
-  // }, []);
-
-  useEffect(()=>{
-    store.dispatch(loadUser());
-
-    getStripeApiKey();
-  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      // Load user only if authenticated
+      if (isAuthenticated) {
+        await store.dispatch(loadUser());
+      }
+  
+      // Load Stripe API key only if authenticated
+      if (isAuthenticated) {
+        await getStripeApiKey();
+      }
+    };
+  
+    fetchData();
+  }, [isAuthenticated]);
 
   return (
     <Router>
@@ -105,13 +95,11 @@ function App() {
         <Route exact path="/password/reset/:token" element={<ResetPassword />} />
         <Route exact path="/contact" element={<ContactPage />} />
         <Route exact path="/cart" element={<Cart />} />
-        {/* <Route exact path="/about" element={<About />} /> */}
         <Route exact path="/shipping" element={<ProtectedRoute component={Shipping} />} />
         <Route exact path="/order/confirm" element={<ProtectedRoute component={ConfirmOrder} />} />
         <Route exact path="/success" element={<ProtectedRoute component={OrderSuccess} />} />
         <Route exact path="/orders" element={<ProtectedRoute component={MyOrders} />} />
         <Route exact path="/order/:id" element={<ProtectedRoute component={OrderDetails} />} />
-        {/* <Route exact path="/process/payment" element={<ProtectedRoute component={Payment} />} /> */}
         <Route
           exact
           path="/process/payment"
