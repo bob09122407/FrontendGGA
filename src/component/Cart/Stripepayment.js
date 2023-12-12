@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { Fragment, useEffect, useRef ,useState} from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../layout/MetaData";
@@ -22,6 +22,9 @@ import {createOrder, clearErrors} from "../../actions/orderAction";
 import { clearCart } from "../../actions/cartAction";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "./../../apiConfig";
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from "@stripe/react-stripe-js";
+
 const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
 
@@ -116,6 +119,21 @@ const Payment = () => {
     
   };
 
+  const [stripeApiKey, setStripeApiKey] = useState("");
+
+  async function getStripeApiKey() {
+    try {
+      const { data } = await axios.get(`${BASE_URL}/api/v1/stripeapikey`);
+      setStripeApiKey(data.stripeApiKey);
+    } catch (error) {
+      console.error("Error fetching Stripe API key:", error);
+    }
+  }
+
+  useEffect(() => {
+    getStripeApiKey();
+  }, []);
+
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -124,6 +142,7 @@ const Payment = () => {
   }, [dispatch, error, alert]);
 
   return (
+    <Elements stripe={loadStripe(stripeApiKey)}>
     <Fragment>
       <MetaData title="Payment" />
       <CheckoutSteps activeStep={2} />
@@ -156,6 +175,7 @@ const Payment = () => {
         
       </div>
     </Fragment>
+    </Elements>
   );
 };
 

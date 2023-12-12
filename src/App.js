@@ -69,17 +69,17 @@ function App() {
       return;
     }
   
-    const fetchData = async () => {
+    // const fetchData = async () => {
       // console.log("Before Dispatching loadUser. isAuthenticated:", isAuthenticated);
   
       if (isAuthenticated) {
       
-        await getStripeApiKey();
+     getStripeApiKey();
       }
-    };
+    // };
   
-    fetchData();
-  }, [isAuthenticated]);
+    // fetchData();
+  });
   
   
 
