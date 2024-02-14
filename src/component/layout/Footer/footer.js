@@ -67,9 +67,9 @@ const Footer = () => {
 
       <div className="rightFooter">
         <h4>Follow Us On</h4>
-        <a href="http://instagram.com/meabhisingh"><BsWhatsapp/></a>
-        <a href="http://youtube.com/6packprogramemr"><BsInstagram/></a>
-        <a href="http://instagram.com/meabhisingh"><FaFacebookF/></a>
+        <a href="#"><BsWhatsapp/></a>
+        <a href="https://www.instagram.com/ggagrotech/"><BsInstagram/></a>
+        <a href="#"><FaFacebookF/></a>
       </div>
 
       <div className="boiling-effect"></div>
