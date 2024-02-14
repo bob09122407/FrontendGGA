@@ -30,7 +30,7 @@ const Header = () => {
     <header>
       <input type="checkbox" name="" id="chk1" />
       <div className="logo">
-        <img src={LogoImage} alt="Logo" />
+       <Link to="/"><img src={LogoImage} alt="Logo" /></Link> 
       </div>
       <ul>
         <li>
