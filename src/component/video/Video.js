@@ -23,7 +23,7 @@ const Video = () => {
       </video>
       {showWelcomeText && (
         <div className="welcome-text">
-          <h1 className='Welcome'>Welcome to Our Store</h1>
+          <h1 className='Welcome'>Welcome to GGA: Grow Smarter!</h1>
           <p>Discover the future of agriculture with Green Global Aggrovation
 </p>
         </div>

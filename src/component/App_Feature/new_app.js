@@ -20,16 +20,18 @@ const Newapp = () => {
         
           {/* Three columns for details */}
           <div className="column">
-            <h2 id="head"> Fog Rate</h2>
-            <p>Content Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quibusdam ea eius veritatis eaque. Necessitatibus unde maiores tenetur animi odio incidunt ipsum sapiente eligendi obcaecati, provident, cum assumenda accusantium nulla.</p>
+            <h2 id="head"> Fog Rate and Fan Control</h2>
+            <p><b>Fog Rate Adjustment:</b> Users can regulate the fog rate to maintain optimal humidity and nutrient delivery based on climatic conditions.</p>
+            <p><b>Fan Control:</b> Turn fans on or off to manage temperature and air circulation, ensuring ideal growing conditions.</p>
           </div>
           <div className="column">
-            <h2 id="head">Detail 2</h2>
-            <p>Content for Detail 2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fuga modi delectus ipsam culpa voluptatibus id possimus inventore quia. Illo animi, deserunt in veniam quam dignissimos adipisci aliquam quisquam alias?</p>
+            <h2 id="head">Light and Nutrients</h2>
+            <p><b>Lighting Control:</b> Change light colors and effects to enhance plant growth and mimic natural sunlight.</p>
+            <p><b>Nutrient System Control:</b> Monitor and adjust nutrient delivery to meet the plants' needs at different growth stages.</p>
           </div>
           <div className="column">
-            <h2 id="head"> Detail 3</h2>
-            <p>Content for Detai Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia placeat iusto nesciunt nulla omnis accusantium quos unde suscipit culpa. Asperiores esse explicabo voluptatum voluptates error, provident suscipit officia quaerat maiores!
+            <h2 id="head">Extensive Plant Database </h2>
+            <p>Access a diverse collection of plant species and varieties, ranging from common houseplants to exotic botanical wonders.
             </p>
           </div>
         </div>

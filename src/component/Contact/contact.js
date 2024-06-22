@@ -32,9 +32,9 @@ const ContactPage = () => {
       <div className="contact-page-content">
         <div className="contact-info">
           <h2 className="contact-info-title">Our Information</h2>
-          <p className="contact-info-text">Email: info@example.com</p>
-          <p className="contact-info-text">Phone: 123-456-7890</p>
-          <p className="contact-info-text">Address: Shreeji Street near shevasi, Vadodara, India</p>
+          <p className="contact-info-text">Email: greenglobalaggrovation@gmail.com</p>
+          <p className="contact-info-text">Phone: 9316878348</p>
+          <p className="contact-info-text">Address: Gotri sevasi, Vadodara, India</p>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <h2 className="contact-form-title">Send Us a Message</h2>

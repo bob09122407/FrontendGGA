@@ -92,7 +92,7 @@ const Home = () => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="ECOMMERCE" />
+          <MetaData title="GGA" />
           <div className="Main">
             <div className="homeHeading1">
               <Video />
