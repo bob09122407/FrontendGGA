@@ -3,7 +3,7 @@
 
 ## Description
 
-Briefly describe your React project, its purpose, and the main features it offers.
+The GGA E-commerce Website is an online platform developed for Green Global Aggrovation (GGA) Pvt. Limited, a company dedicated to selling eco-friendly products. This website, built using the MERN stack (MongoDB, Express.js, React.js, and Node.js), offers a seamless shopping experience with integrated Stripe payment gateway support for secure and efficient transactions.
 
 ## Table of Contents
 
